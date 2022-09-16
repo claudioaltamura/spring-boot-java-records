@@ -1,20 +1,26 @@
 package de.claudioaltamura.springboot.javarecords;
 
+import static de.claudioaltamura.springboot.javarecords.SuperHeroesDataProvider.createSuperhero;
+import static de.claudioaltamura.springboot.javarecords.SuperHeroesDataProvider.createSuperheroWithoutId;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.jupiter.api.Test;
 
 class SuperheroTest {
 
-	private Superhero createSuperhero() {
-		return new Superhero(1L, "Spiderman", "Peter Parker", 98.0D, new City(1L, "New York", "NYC"));
-	}
-
 	@Test
 	void testCreate(){
 		final Superhero superhero = createSuperhero();
 		assertThat(superhero.name()).isEqualTo("Spiderman");
 	}
+
+	@Test
+	void testCreateWithoutId(){
+		final Superhero superhero = createSuperheroWithoutId();
+		assertThat(superhero.id()).isNull();
+		assertThat(superhero.name()).isEqualTo("Spiderman");
+	}
+
 
 	@Test
 	void testToString(){
