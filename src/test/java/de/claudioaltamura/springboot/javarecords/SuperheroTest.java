@@ -11,6 +11,7 @@ class SuperheroTest {
 	@Test
 	void testCreate(){
 		final Superhero superhero = createSuperhero();
+		assertThat(superhero.id()).isNotNull();
 		assertThat(superhero.name()).isEqualTo("Spiderman");
 	}
 
