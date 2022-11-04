@@ -22,7 +22,6 @@ class SuperheroTest {
 		assertThat(superhero.name()).isEqualTo("Spiderman");
 	}
 
-
 	@Test
 	void testToString(){
 		final Superhero superhero = createSuperhero();
